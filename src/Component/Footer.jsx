@@ -1,0 +1,133 @@
+import React from 'react'
+function Footer() {
+    const footeryear = new Date().getFullYear()
+  return (
+    <footer className="footer p-10 bg-gray-700 text-primary-content footer-center">
+      <div>
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 650 650"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_d_201_13)">
+            <rect
+              x="143.394"
+              y="128.187"
+              width="68"
+              height="500"
+              rx="29"
+              transform="rotate(-21.6919 143.394 128.187)"
+              fill="white"
+            />
+            <rect
+              x="280.914"
+              y="73.4839"
+              width="68"
+              height="500"
+              rx="29"
+              transform="rotate(-21.6919 280.914 73.4839)"
+              fill="white"
+            />
+          </g>
+          <g filter="url(#filter1_d_201_13)">
+            <rect
+              x="46.5018"
+              y="301.256"
+              width="500"
+              height="59"
+              rx="24.5"
+              transform="rotate(-21.6919 46.5018 301.256)"
+              fill="white"
+            />
+            <rect
+              x="123.012"
+              y="493.597"
+              width="500"
+              height="59"
+              rx="24.5"
+              transform="rotate(-21.6919 123.012 493.597)"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_d_201_13"
+              x="148.052"
+              y="60.7036"
+              width="366.905"
+              height="531.418"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="2" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_201_13"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_201_13"
+                result="shape"
+              />
+            </filter>
+            <filter
+              id="filter1_d_201_13"
+              x="49.8159"
+              y="123.762"
+              width="552.586"
+              height="416.051"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="2" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_201_13"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_201_13"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
+        <p>Copyright &copy; {footeryear} All rights reserved</p>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer

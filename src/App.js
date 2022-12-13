@@ -1,12 +1,18 @@
-
+import {BrowserRouter as Router,Route} from 'react-router-dom'
+import Navigation from './Component/Navigation';
+import Footer from './Component/Footer';
 function App() {
   return (
-    <div className="bg-purple-500">
-      <h1 className="text-xl">
-      Hello world!
-    </h1>
-    <button className="btn">click</button>
-    </div>
+    <Router>
+      <div className='flex flex-col justify-between h-screen'>
+        <Navigation/>
+
+        <main>Content</main>
+
+        <Footer/>
+      </div>
+
+    </Router>
   );
 }
 
