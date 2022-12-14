@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
+import UsersResults from '../users/UsersResults';
 
 function Home() {
     console.log('home page');
   return (
-    <div>
-      <h1>Home component</h1>
-      
-      {process.env.REACT_APP_GITHUB_TOKEN}
-    </div>
+    <>
+      {/* user search component */}
+      <UsersResults/>
+    </>
   )
 }
 
