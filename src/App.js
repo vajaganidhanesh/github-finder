@@ -7,6 +7,7 @@ import Filenot from './pages/Filenot';
 import Navigation from './Component/Navigation';
 import Footer from './Component/Footer';
 import Alert from './Component/Alert';
+import User from './pages/User';
 
 import {GithubProvider} from './context/github/GithubContext';
 import {AlertProvider} from './context/alert/AlertContext'
@@ -24,6 +25,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home/>} />
               <Route path='/about' element={<About/>} />
+              <Route path='/user/:login' element={<User/>} />
               <Route path='/notfound' element={<Filenot/>} />
               <Route path='/*' element={<Filenot/>} />
             </Routes>
