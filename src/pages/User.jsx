@@ -5,15 +5,23 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import GithubContext from "../context/github/GithubContext";
 import RepoList from "../Component/repos/RepoList";
+import {getUserRepos,getUser} from '../context/github/GithubActions';
 
 function User() {
-  const { getUser, user, loading,getUserRepos,repos } = useContext(GithubContext);
+  const { user,dispatch, loading,repos } = useContext(GithubContext);
   const params = useParams();
 
   useEffect(() => {
-    getUser(params.login);
-    getUserRepos(params.login)
-  }, []);
+    dispatch({type:'SET_LOADING'})
+    const getUserData = async()=>{
+      const userData = await getUser(params.login)
+      dispatch({type:'GET_USER', payload:userData})
+
+      const userRepoData = await getUserRepos(params.login)
+      dispatch({type:'GET_REPOS', payload:userRepoData})
+    }
+    getUserData()
+  }, [dispatch,params.login]);
 
   if (loading) {
     return <Spinner />;
@@ -33,7 +41,6 @@ function User() {
     public_gists,
     hireable,
     avatar_url,
-    gravatar_id,
   } = user;
 
   return (
