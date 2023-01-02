@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import GithubContext from "../context/github/GithubContext";
 import RepoList from "../Component/repos/RepoList";
-import {getUserRepos,getUser} from '../context/github/GithubActions';
+import {getUserAndRepos} from '../context/github/GithubActions';
 
 function User() {
   const { user,dispatch, loading,repos } = useContext(GithubContext);
@@ -14,11 +14,9 @@ function User() {
   useEffect(() => {
     dispatch({type:'SET_LOADING'})
     const getUserData = async()=>{
-      const userData = await getUser(params.login)
-      dispatch({type:'GET_USER', payload:userData})
+      const userData = await getUserAndRepos(params.login)
+      dispatch({type:'GET_USER_AND_REPOS', payload:userData})
 
-      const userRepoData = await getUserRepos(params.login)
-      dispatch({type:'GET_REPOS', payload:userRepoData})
     }
     getUserData()
   }, [dispatch,params.login]);
@@ -100,7 +98,6 @@ function User() {
                   <div className="text-lg stat-value">
                     <a
                       href={`https://${blog}`}
-                      target="_blank"
                       rel="norefferer"
                     >
                       {blog}
@@ -115,7 +112,6 @@ function User() {
                   <div className="text-lg stat-value">
                     <a
                       href={`https://twitter.com/${twitter_username}`}
-                      target="_blank"
                       rel="norefferer"
                     >
                       {twitter_username}
@@ -127,7 +123,7 @@ function User() {
           </div>
         </div>
 
-        <div className="w-full py-5 mb-6 rounded-lg text-white shadow-md bg-slate-600 stats">
+        <div className="w-full py-5 mt-6 mb-6 rounded-lg text-white shadow-md bg-slate-600 stats">
           <div className="stat">
             <div className="stat-figure text-secondary">
               <FaUsers className="text-3xl md:text-5xl"/>
