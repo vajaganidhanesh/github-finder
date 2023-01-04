@@ -12,11 +12,9 @@ function UserSearch() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(text);
-    if (text === "") {
-        
-      setAlert("Please enter something","error");
 
+    if (text === "") {
+      setAlert("Please enter something","error");
     } else {
       // to-do search coding part
       dispatch({type:'SET_LOADING'})
